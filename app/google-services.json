@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "939048431275",
+    "firebase_url": "https://notebookresearch-e1d9e.firebaseio.com",
+    "project_id": "notebookresearch-e1d9e",
+    "storage_bucket": "notebookresearch-e1d9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939048431275:android:7a8b099033ac24d6c911ee",
+        "android_client_info": {
+          "package_name": "com.example.notebookresearch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939048431275-5t01ua2qrfirsgo9m0t78319dpug6ptl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.notebookresearch",
+            "certificate_hash": "d5448d2a301378350607a273d755cfc482b77f75"
+          }
+        },
+        {
+          "client_id": "939048431275-n1cb9ji1ket8otms2bp30ngrm2utpr8a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBgQvylEN5VQ0qLMy6lrI-tZkO9y6IUAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939048431275-n1cb9ji1ket8otms2bp30ngrm2utpr8a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
