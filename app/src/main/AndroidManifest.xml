@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AnotherActivity"
-            android:parentActivityName=".BoardActivity"></activity>
+        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".NewPostActivity" />
+        <activity
+            android:name=".AnotherActivity"
+            android:parentActivityName=".BoardActivity" />
         <activity android:name=".QuestionnaireActivity" />
         <activity android:name=".BoardActivity" />
         <activity android:name=".MainActivity">

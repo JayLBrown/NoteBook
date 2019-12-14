@@ -1,10 +1,17 @@
 package com.example.notebookresearch;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -26,6 +33,33 @@ public class BoardActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(recyclerViewAdapter);
 
     }
+
+    public void readData(final MyCallBack callBack) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("Posts");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+
+            ArrayList<PostModel> models = new ArrayList<>();
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                    PostModel m = snapshot.getValue(PostModel.class);
+                    models.add(m);
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+}
 
     private ArrayList<PostModel> getMyList() {
 
