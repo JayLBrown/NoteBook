@@ -1,4 +1,4 @@
-package com.example.notebookresearch;
+package com.example.notebookresearch.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,13 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.notebookresearch.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonRegister;
 
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLogIn = findViewById(R.id.buttonLogIn);
         buttonRegister = findViewById(R.id.buttonRegister);
 
+        buttonLogIn.setOnClickListener(this);
+        buttonRegister.setOnClickListener(this);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
-
-        buttonLogIn.setOnClickListener(this);
-        buttonRegister.setOnClickListener(this);
-
     }
-
-
     @Override
     public void onClick(View view) {
 
@@ -92,5 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
+    }
+    public String getUid() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 }

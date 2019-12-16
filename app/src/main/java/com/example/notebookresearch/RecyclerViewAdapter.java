@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.notebookresearch.Activities.AnotherActivity;
+import com.example.notebookresearch.Models.PostModel;
+
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.notebookresearch;
+package com.example.notebookresearch.Models;
 
 public class PostModel {
 

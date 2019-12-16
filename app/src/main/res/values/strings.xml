@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NoteBookResearch</string>
+    <string name="app_name">NoteBook</string>
     <string name="promoter_prompt" />
     <string name="detractor_prompt" />
     <string name="error_prompt" />

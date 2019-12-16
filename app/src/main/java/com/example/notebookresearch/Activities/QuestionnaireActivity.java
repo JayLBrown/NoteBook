@@ -1,8 +1,4 @@
-package com.example.notebookresearch;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
+package com.example.notebookresearch.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.notebookresearch.R;
 import com.surveymonkey.surveymonkeyandroidsdk.SurveyMonkey;
 import com.surveymonkey.surveymonkeyandroidsdk.utils.SMError;
 
@@ -111,47 +108,34 @@ public class QuestionnaireActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//    }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){
-//
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu_main, menu);
-//
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        if(item.getItemId() == R.id.login) {
-//            Intent loginIntent = new Intent(this, LoginActivity.class);
-//            startActivity(loginIntent);
-//
-//        }else if(item.getItemId() == R.id.register) {
-//            Intent searchIntent = new Intent(this, RegisterActivity.class);
-//            startActivity(searchIntent);
-//        }else if(item.getItemId() == R.id.createpost) {
-//            Intent postIntent = new Intent(this, PostActivity.class);
-//            startActivity(postIntent);
-//
-//        } else if(item.getItemId() == R.id.itemProfilePage) {
-//            Intent searchIntent = new Intent(this, ProfileActivity.class);
-//            startActivity(searchIntent);
-//
-//        } else if(item.getItemId() == R.id.questionnaire) {
-//            Intent searchIntent = new Intent(this, QuestionareActivity.class);
-//            startActivity(searchIntent);
-//        }else if(item.getItemId() == R.id.logout) {
-//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
-//            startActivity(intent);
-//            finish();
-//        }
-//        return super.onOptionsItemSelected(item);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.researchBoard) {
+            Intent loginIntent = new Intent(this, BoardActivity.class);
+            startActivity(loginIntent);
+
+
+        } else if (item.getItemId() == R.id.questionnaire) {
+            Intent searchIntent = new Intent(this, QuestionnaireActivity.class);
+            startActivity(searchIntent);
+        } else if (item.getItemId() == R.id.logout) {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     }
 
